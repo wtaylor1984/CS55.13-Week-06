@@ -1,0 +1,38 @@
+[
+    {
+        "petName": "Rex",
+        "type": "Dog",
+        "breed": "Golden Retriever",
+        "age": 3,
+        "ownerID" : 1
+      },
+      {
+        "petName": "Whiskers",
+        "type": "Cat",
+        "breed": "Siamese",
+        "age": 2,
+        "ownerID" : 1
+      },
+      {
+        "petName": "Fluffy",
+        "type": "Rabbit",
+        "breed": "Angora",
+        "age": 1,
+        "ownerID" : 2
+      },
+      {
+        "petName": "Spike",
+        "type": "Dog",
+        "breed": "Bulldog",
+        "age": 5,
+        "ownerID" : 3
+      },
+      {
+        "petName": "Serpent",
+        "type": "Snake",
+        "breed": "Python",
+        "age": "Unknown",
+        "ownerID" : 4
+      }
+
+]

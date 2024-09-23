@@ -59,7 +59,7 @@ export function getAllIds() {
 }
 
 // function return ALL of the properties for one single object with a match id prop value
-export async function getData(idRequested) {
+export async function getData1(idRequested) {
   // get filepath to json file
   const filePath = path.join(dataDir, 'data.json');
   
@@ -80,6 +80,37 @@ export async function getData(idRequested) {
   let objReturned;
   if (objMatch.length > 0) {
     objReturned = objMatch[0];
+  } else {
+    objReturned = {};
+  }
+
+  // return object value found
+  return objReturned;
+}
+
+// function return ALL of the properties for one single object with a match id prop value
+export async function getData(idRequested) {
+  // get filepath to json file
+  const filePath = path.join(dataDir, 'animals.json');
+  
+  // load json file contents
+  const jsonString = fs.readFileSync(filePath,'utf8');
+  
+  // convert string from file into json array object
+  const jsonObj = JSON.parse(jsonString);
+
+  // find object value in array that has matching id
+  console.log(idRequested);
+  const objMatch = jsonObj.filter(
+    function(obj) {
+      return obj.ownerID.toString() === idRequested;
+    }
+  );
+
+  // extract object value in filtered array if any
+  let objReturned;
+  if (objMatch.length > 0) {
+    objReturned = objMatch;
   } else {
     objReturned = {};
   }
