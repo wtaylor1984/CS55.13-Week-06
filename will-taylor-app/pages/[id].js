@@ -29,17 +29,8 @@ export default function Entry( { itemData } ) {
   //console.log(itemData[0].name);
   return (
     <Layout>
-      <h1>{itemData[0].name}'s Pets</h1>
+      <h1>{itemData[0].name}s Pets</h1>
       
     </Layout>
   );
 }
-
-/**
- <ul>
-        {itemData.pets.map(
-          (pet) => (
-          <li key={pet.id}>Pet Name: {pet.petName}</li>
-        ))}
-      </ul>
- */
