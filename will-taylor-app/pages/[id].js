@@ -25,7 +25,7 @@ export async function getStaticPaths() {
 // export our dynamically routed page component Entry
 export default function Entry( { itemData } ) {
   console.log(itemData);
-  return itemData(
+  return (
     <Layout>
       <article className="card col-6">
         <div className="card-body">
