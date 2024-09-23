@@ -88,8 +88,54 @@ export async function getData1(idRequested) {
   return objReturned;
 }
 
-// function return ALL of the properties for one single object with a match id prop value
+// This one is too simple and I want to get all the information in the app in a better way!
 export async function getData(idRequested) {
+  // get filepath to json file
+  const filePath = path.join(dataDir, 'data.json');
+  
+  // load json file contents
+  const jsonString = fs.readFileSync(filePath,'utf8');
+  
+  // convert string from file into json array object
+  const jsonObj = JSON.parse(jsonString);
+
+  // find object value in array that has matching id
+  console.log(idRequested);
+  const objMatch = jsonObj.filter(
+    function(obj) {
+      return obj.id.toString() === idRequested;
+    }
+  );
+
+  // extract object value in filtered array if any
+  let objReturned;
+  if (objMatch.length > 0) {
+    objReturned = objMatch;
+
+    //we found something, now, let's grab all the pets
+    // get filepath to json file
+    const filePath2 = path.join(dataDir, 'animals.json');
+    // load json file contents
+    const jsonString2 = fs.readFileSync(filePath2,'utf8');
+    // convert string from file into json array object
+    const jsonObj2 = JSON.parse(jsonString2);
+    // find object value in array that has matching id
+    const objMatch2 = jsonObj2.filter(
+      function(obj) {
+        return obj.ownerID.toString() === idRequested;
+      }
+    );
+    objReturned.pets = objMatch2;
+  } else {
+    objReturned = {};
+  }
+
+  // return object value found
+  return objReturned;
+}
+
+// function return ALL of the properties for one single object with a match id prop value
+export async function getData2(idRequested) {
   // get filepath to json file
   const filePath = path.join(dataDir, 'animals.json');
   
