@@ -41,9 +41,9 @@ export default function Entry( { itemData } ) {
           <h6>Pets </h6>
           <ol>
           {itemData[1] && itemData[1].map(
-              ({id, petName}) => (
+              ({id, petName, type}) => (
                 <li key={id}>
-                  {petName}
+                  {petName} the {type}
                 </li>
               )
             )
