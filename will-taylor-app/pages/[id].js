@@ -24,8 +24,8 @@ export async function getStaticPaths() {
 
 // export our dynamically routed page component Entry
 export default function Entry( { itemData } ) {
-  console.log(itemData );
-  console.log(itemData.pets );
+  //console.log(itemData );
+  //console.log(itemData[1][0].id );
   //console.log(itemData.pets[0].id);
   //console.log(itemData[0].name);
   
@@ -40,7 +40,7 @@ export default function Entry( { itemData } ) {
           <a href="#" className="card-link">{itemData[0].email}</a>
           <h6>Pets </h6>
           <ol>
-          {itemData.pets && itemData.pets.map(
+          {itemData[1] && itemData[1].map(
               ({id, petName}) => (
                 <li key={id}>
                   {petName}
