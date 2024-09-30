@@ -5,7 +5,7 @@ export default function Layout( { children, home } ) {
     return (
         <div>
           <header>
-              <h1>Basic Next.js App from Will</h1>
+              <h1>Basic Next.js App from Will connecting to firebase!</h1>
               <p>Here I am playing!</p>
           </header>
           <main>
